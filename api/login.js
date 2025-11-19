@@ -1,5 +1,4 @@
 export default function handler(req, res) {
-  // Autorise le front-end (CORS)
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -18,5 +17,5 @@ export default function handler(req, res) {
     return res.status(200).json({ message: "Identifiants incorrects." });
   }
 
-  return res.status(405).json({ message: "Méthode non autorisée" });
+  res.status(405).json({ message: "Méthode non autorisée" });
 }
